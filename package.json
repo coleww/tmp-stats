@@ -1,0 +1,11 @@
+{
+  "name": "tmp-stream",
+  "version": "0.0.0",
+  "description": "util to handle tmp file streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "author": "Cole Willsea",
+  "license": "MIT"
+}
