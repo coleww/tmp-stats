@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 
-// module.exports.getStat = getStat;
+module.exports.getStat = getStat;
 module.exports.randomPath = randomPath;
 
 
@@ -18,32 +18,40 @@ function randomPath () {
 // and then it destroys that file
 // gives u tmp path just in case?
 //is the enc necessary? how to make it optional?
-// function getStat (blobStreamThingyDude, enc, cb) {
-//   var tmpFile = randomPath();
-//   var tmpWS = fs.createWriteStream(tmpFile);
-//   var tmpDeleted = false;
+function getStat (blobStreamThingyDude, enc, cb) {
+  var tmpFile = randomPath();
+  var tmpWS = fs.createWriteStream(tmpFile);
 
-//   tmpWS.write(blobStreamThingyDude, enc, function(data, end, err){//is that even correct for the args?
-//     // do something with err if err lol
+  // might be YAGNI ATM
+  var tmpDeleted = false;
+  // hmmm....
 
+  tmpWS.write(blobStreamThingyDude, enc, function(data, end, err){//is that even correct for the args?
+    // do something with err if err lol
+    // end();
 
-//     fs.stat(tmpFile, function(err, stat){
-//       console.log(stat);
-//       // invoke callback passing it the other stuff?
-//       cb(err, stat);
-//     });
+    fs.stat(tmpFile, function(err, stat){
+      cb(err, stat);
+    });
 
-//     if(!tmpDeleted){
-//       fs.unlink(tmpFile, function(err){
-//         // blab loudly if there is an error
-//       });
-//     }
+    if(!tmpDeleted){
+      fs.unlink(tmpFile, function(err){
+        if(err) {
+          cb(err);
+        } else {
+          tmpDeleted = true;
+        }
 
-//   });
-//   tmpWS.on('error', function(){
+        // blab loudly if there is an error
+      });
+    }
 
-//   });
-//   tmpWS.on('close', function(){
+  });
+  tmpWS.end();
+  // tmpWS.on('finish', function(){
 
-//   });
-// }
+  // });
+  // tmpWS.on('error', function(err){
+  //     cb(err);
+  // });
+}
