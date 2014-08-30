@@ -1,14 +1,19 @@
 {
   "name": "tmp-stream",
   "version": "0.0.0",
-  "description": "util to handle tmp file streams",
+  "description": "helps you get stats on arbitrary streams/data",
+  "keywords": [
+    "file stats",
+    "S3"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "test.js"
   },
-  "author": "Cole Willsea",
+  "author": "Cole Willsea <coleww@gmail.com> (http://colewillsea.com)",
   "license": "MIT",
-  "devDependencies": {
-    "rimraf": "^2.2.8"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coleww/tmp-stream"
   }
 }
