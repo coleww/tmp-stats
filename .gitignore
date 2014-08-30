@@ -2,3 +2,4 @@ node_modules/
 notes.md
 .DS_Store
 */.DS_Store
+npm-debug.log
