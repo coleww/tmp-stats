@@ -1,6 +1,6 @@
 {
   "name": "tmp-stream",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "helps you get stats on arbitrary streams/data",
   "keywords": [
     "file stats",
