@@ -5,12 +5,11 @@ var tmpStream = require('./');
 
 test('tmp-stream', function(t) {
     t.plan(4);
-    files = fs.readdirSync('/');
-    tmpStream.getStat("hello world!", 'utf-8', function(err, stat){
+    tmpStream.getStat("hello world!", 'utf-8', function(err, stat, tmpFile){
       t.notOk(err, 'no err');
       t.ok(stat, 'lalalalalala');
       t.ok(stat.size === 12, '12 chars!');
-      t.ok(files.length === fs.readdirSync('/').length, 'cleans up after itself!');
+      t.notOk(fs.existsSync(tmpFile), 'it did clean up!');
       t.end();
     });
 });
