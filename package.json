@@ -1,7 +1,7 @@
 {
-  "name": "tmp-stream",
+  "name": "tmp-stats",
   "version": "0.1.0",
-  "description": "helps you get stats on arbitrary streams/data",
+  "description": "writes data/stream/whatever to a tmp file, gets the stats, then deletes the tmp file",
   "keywords": [
     "file stats",
     "S3"
