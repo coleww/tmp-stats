@@ -1,4 +1,4 @@
-# tmp-stream
+# tmp-stats
 
 a lil helper to get the stats object on arbitrary streams/datas/blobs/pokemons.
 

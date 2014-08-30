@@ -3,7 +3,7 @@ var path = require('path');
 var test = require('tap').test;
 var tmpStream = require('./');
 
-test('tmp-stream', function(t) {
+test('tmp-stats', function(t) {
     t.plan(4);
     tmpStream.getStat("hello world!", 'utf-8', function(err, stat, tmpFile){
       t.notOk(err, 'no err');
